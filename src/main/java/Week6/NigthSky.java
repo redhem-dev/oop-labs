@@ -5,14 +5,14 @@ public class NigthSky {
 
     public static void main(String[] args) {
 
-        NigthSky nightsky = new NigthSky(0.1, 40, 20);
+        NigthSky nightsky = new NigthSky(0.125, 40, 20);
         nightsky.print();
         System.out.println();
 
         System.out.println("Number of stars: "+ nightsky.starsInLastPrint());
 
 
-
+        ////0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9
     }
     double starDensity;
     int width;
@@ -35,36 +35,22 @@ public class NigthSky {
         this.height = height;
     }
     public void printLine(){
-        List<Integer> randomNumbers = new ArrayList<>();
-        Random rand = new Random();
-        int i=0;
+        Random random = new Random();
 
+        for (int i = 0; i < this.width; i++) {
+            // Use nextDouble to generate a random number between 0 and 1
+            double randomValue = random.nextDouble();
 
-        while (i<(int)(width*starDensity)){
-            int randomNumber = rand.nextInt((this.width-0)+1)+0;
-            if (randomNumbers.contains(randomNumber)){
-                continue;
-            }
-            else {
-                randomNumbers.add(randomNumber);
-                i++;
-            }
-        }
-
-        Collections.sort(randomNumbers);
-
-
-
-        for (int j=0; j<width; j++) {
-            if (randomNumbers.contains(j)){
+            // Check if the random value is less than the density
+            // If yes, print a star, otherwise print a space
+            if (randomValue < this.starDensity) {
                 System.out.print("*");
-
-            }
-            else {
+            } else {
                 System.out.print(" ");
             }
         }
     }
+
     public void print(){
         for (int k=0; k<width; k++){
 
