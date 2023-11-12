@@ -17,6 +17,7 @@ public class NigthSky {
     double starDensity;
     int width;
     int height;
+    int starsinLastprint=0;
 
     public NigthSky(double starDensity, int width, int height) {
         this.starDensity = starDensity;
@@ -37,6 +38,7 @@ public class NigthSky {
     public void printLine(){
         Random random = new Random();
 
+
         for (int i = 0; i < this.width; i++) {
             // Use nextDouble to generate a random number between 0 and 1
             double randomValue = random.nextDouble();
@@ -45,6 +47,9 @@ public class NigthSky {
             // If yes, print a star, otherwise print a space
             if (randomValue < this.starDensity) {
                 System.out.print("*");
+                starsinLastprint++;
+
+
             } else {
                 System.out.print(" ");
             }
@@ -60,10 +65,7 @@ public class NigthSky {
     }
 
     public int starsInLastPrint(){
-        int starsInLastPrint;
-        double previous = this.width*this.height*this.starDensity;
-        starsInLastPrint=(int)previous;
-        return starsInLastPrint;
+        return starsinLastprint;
     }
 
 
