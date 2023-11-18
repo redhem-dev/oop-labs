@@ -1,6 +1,7 @@
+package Week7;
+
 import Week6.LibraryInformationSystem.StringUtils;
 
-import java.util.ArrayList;
 import java.util.Optional;
 import java.util.List;
 import java.util.Arrays;
@@ -55,7 +56,7 @@ class Start {
         libraryCatalog.updateAvailability("To Kill a Mockingbird", true);
         System.out.println("Updated availability of 'To Kill a Mockingbird'");
 
-        System.out.println("Updated Book List:");
+        System.out.println("Updated Week7.Book List:");
         libraryCatalog.books.forEach(book -> System.out.println(book.title() + " - Available: " + book.available()));
     }
 }
