@@ -21,7 +21,7 @@ public class Thing {
         this.name = name;
     }
 
-    public Thing(String name){this.name = name;}
+
 
 
     @Override
