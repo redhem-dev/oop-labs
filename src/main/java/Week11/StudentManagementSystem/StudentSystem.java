@@ -35,7 +35,7 @@ class StudentSystem {
         for (String l : lines) {
             String[] splitLine = l.split(",");
             Student temp = new Student(
-                    splitLine[0].equals(" ") ? 0 : Integer.parseInt(splitLine[0]),
+                    splitLine[0].equals("") ? 0 : Integer.parseInt(splitLine[0]),
                     splitLine[1],
                     splitLine[2],
                     splitLine[3],
@@ -53,7 +53,7 @@ class StudentSystem {
                 return Optional.of(s);
             }
         }
-        throw new StudentNotFoundException("Student could not be found");
+        return Optional.empty();
     }
 
     public  Student getHighestGPAStudent(){
